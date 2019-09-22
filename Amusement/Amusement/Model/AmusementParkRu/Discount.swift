@@ -7,3 +7,8 @@
 //
 
 import Foundation
+enum Discount {
+    case foodDiscount(amount: Int)
+    case merchandiseDiscount(amount: Int)
+    
+}

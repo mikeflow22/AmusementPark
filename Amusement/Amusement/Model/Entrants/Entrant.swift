@@ -8,11 +8,9 @@
 
 import Foundation
 
-protocol Entrant {
-    var discount: [Discount] { get set }
-    var areaAccess: [AreaAccess] { get set }
-    
-    func swipe(areaAccess: AreaAccess) -> Bool
-    func swipe(rideAccess: RideAccess) -> Bool
-    func swipe(discount: Discount) -> Int
+class Entrant {
+    var rideAccess: RideAccess
+    var areaAccess: AreaAccess
+    var discount: Discount
+
 }

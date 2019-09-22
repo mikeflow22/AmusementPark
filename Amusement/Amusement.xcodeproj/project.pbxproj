@@ -22,6 +22,7 @@
 		1B3E9B2D233708700057187F /* RideAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B2C233708700057187F /* RideAccess.swift */; };
 		1B3E9B2F233708940057187F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B2E233708940057187F /* Employee.swift */; };
 		1B3E9B31233708CA0057187F /* EmployeeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B30233708CA0057187F /* EmployeeInformation.swift */; };
+		1B3E9B3723370A670057187F /* SwipePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B3623370A670057187F /* SwipePass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1B3E9B2C233708700057187F /* RideAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAccess.swift; sourceTree = "<group>"; };
 		1B3E9B2E233708940057187F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		1B3E9B30233708CA0057187F /* EmployeeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformation.swift; sourceTree = "<group>"; };
+		1B3E9B3623370A670057187F /* SwipePass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				1B3E9B202336FAEA0057187F /* AmusementParkError.swift */,
 				1B3E9B222336FE5A0057187F /* Discount.swift */,
 				1B3E9B2C233708700057187F /* RideAccess.swift */,
+				1B3E9B3623370A670057187F /* SwipePass.swift */,
 			);
 			path = AmusementParkRu;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				1B3E9B2B233708550057187F /* ChildGuest.swift in Sources */,
 				1B3E9B27233708090057187F /* ClassicGuest.swift in Sources */,
 				1B3E9B232336FE5A0057187F /* Discount.swift in Sources */,
+				1B3E9B3723370A670057187F /* SwipePass.swift in Sources */,
 				1B3E9B252336FFA60057187F /* AreaAccess.swift in Sources */,
 				1B3E9B0B2336F9620057187F /* AppDelegate.swift in Sources */,
 			);
