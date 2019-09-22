@@ -14,6 +14,14 @@
 		1B3E9B152336F9630057187F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3E9B132336F9630057187F /* LaunchScreen.storyboard */; };
 		1B3E9B1F2336FAAC0057187F /* Entrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B1E2336FAAC0057187F /* Entrant.swift */; };
 		1B3E9B212336FAEA0057187F /* AmusementParkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B202336FAEA0057187F /* AmusementParkError.swift */; };
+		1B3E9B232336FE5A0057187F /* Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B222336FE5A0057187F /* Discount.swift */; };
+		1B3E9B252336FFA60057187F /* AreaAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B242336FFA60057187F /* AreaAccess.swift */; };
+		1B3E9B27233708090057187F /* ClassicGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B26233708090057187F /* ClassicGuest.swift */; };
+		1B3E9B292337083F0057187F /* VipGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B282337083F0057187F /* VipGuest.swift */; };
+		1B3E9B2B233708550057187F /* ChildGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B2A233708550057187F /* ChildGuest.swift */; };
+		1B3E9B2D233708700057187F /* RideAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B2C233708700057187F /* RideAccess.swift */; };
+		1B3E9B2F233708940057187F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B2E233708940057187F /* Employee.swift */; };
+		1B3E9B31233708CA0057187F /* EmployeeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B30233708CA0057187F /* EmployeeInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		1B3E9B162336F9630057187F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B3E9B1E2336FAAC0057187F /* Entrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrant.swift; sourceTree = "<group>"; };
 		1B3E9B202336FAEA0057187F /* AmusementParkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmusementParkError.swift; sourceTree = "<group>"; };
+		1B3E9B222336FE5A0057187F /* Discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discount.swift; sourceTree = "<group>"; };
+		1B3E9B242336FFA60057187F /* AreaAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAccess.swift; sourceTree = "<group>"; };
+		1B3E9B26233708090057187F /* ClassicGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicGuest.swift; sourceTree = "<group>"; };
+		1B3E9B282337083F0057187F /* VipGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipGuest.swift; sourceTree = "<group>"; };
+		1B3E9B2A233708550057187F /* ChildGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildGuest.swift; sourceTree = "<group>"; };
+		1B3E9B2C233708700057187F /* RideAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAccess.swift; sourceTree = "<group>"; };
+		1B3E9B2E233708940057187F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		1B3E9B30233708CA0057187F /* EmployeeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +96,50 @@
 		1B3E9B1D2336F9EF0057187F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1B3E9B1E2336FAAC0057187F /* Entrant.swift */,
-				1B3E9B202336FAEA0057187F /* AmusementParkError.swift */,
+				1B3E9B35233709300057187F /* Entrants */,
+				1B3E9B342337090F0057187F /* AmusementParkRu */,
+				1B3E9B33233708FA0057187F /* Employee */,
+				1B3E9B32233708DB0057187F /* Guest */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1B3E9B32233708DB0057187F /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				1B3E9B26233708090057187F /* ClassicGuest.swift */,
+				1B3E9B2A233708550057187F /* ChildGuest.swift */,
+				1B3E9B282337083F0057187F /* VipGuest.swift */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		1B3E9B33233708FA0057187F /* Employee */ = {
+			isa = PBXGroup;
+			children = (
+				1B3E9B2E233708940057187F /* Employee.swift */,
+				1B3E9B30233708CA0057187F /* EmployeeInformation.swift */,
+			);
+			path = Employee;
+			sourceTree = "<group>";
+		};
+		1B3E9B342337090F0057187F /* AmusementParkRu */ = {
+			isa = PBXGroup;
+			children = (
+				1B3E9B242336FFA60057187F /* AreaAccess.swift */,
+				1B3E9B202336FAEA0057187F /* AmusementParkError.swift */,
+				1B3E9B222336FE5A0057187F /* Discount.swift */,
+				1B3E9B2C233708700057187F /* RideAccess.swift */,
+			);
+			path = AmusementParkRu;
+			sourceTree = "<group>";
+		};
+		1B3E9B35233709300057187F /* Entrants */ = {
+			isa = PBXGroup;
+			children = (
+				1B3E9B1E2336FAAC0057187F /* Entrant.swift */,
+			);
+			path = Entrants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +213,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B3E9B292337083F0057187F /* VipGuest.swift in Sources */,
+				1B3E9B2D233708700057187F /* RideAccess.swift in Sources */,
+				1B3E9B31233708CA0057187F /* EmployeeInformation.swift in Sources */,
 				1B3E9B1F2336FAAC0057187F /* Entrant.swift in Sources */,
+				1B3E9B2F233708940057187F /* Employee.swift in Sources */,
 				1B3E9B0D2336F9620057187F /* ViewController.swift in Sources */,
 				1B3E9B212336FAEA0057187F /* AmusementParkError.swift in Sources */,
+				1B3E9B2B233708550057187F /* ChildGuest.swift in Sources */,
+				1B3E9B27233708090057187F /* ClassicGuest.swift in Sources */,
+				1B3E9B232336FE5A0057187F /* Discount.swift in Sources */,
+				1B3E9B252336FFA60057187F /* AreaAccess.swift in Sources */,
 				1B3E9B0B2336F9620057187F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
