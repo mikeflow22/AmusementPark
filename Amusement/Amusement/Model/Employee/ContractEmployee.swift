@@ -1,5 +1,5 @@
 //
-//  ClassicGuest.swift
+//  ContractEmployee.swift
 //  Amusement
 //
 //  Created by Michael Flowers on 9/21/19.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class ClassicGuest: Entrant {
-
+class ContractEmployee: Entrant {
+    
 }
