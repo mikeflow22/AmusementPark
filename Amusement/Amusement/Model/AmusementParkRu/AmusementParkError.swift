@@ -17,5 +17,6 @@ enum AmusementParkError: Error {
     case notPermittedAccessInArea(description: String)
     case doNotHaveAccessToAllRides(description: String)
     case notPermittedToSkipLines(description: String)
+    case notUnderTheFreeChildAgeLimit(description: String)
     
 }

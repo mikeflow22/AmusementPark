@@ -14,8 +14,8 @@ class ClassicGuest: Entrant {
         super.init(rideAccess: [.allRides], areaAccess: [.amusement], discount: [])
     }
     
-    override func swipe(discount: Discount) -> Int {
-        return 0
+    override func swipe(discount: Discount) -> Float {
+        return 0.0
     }
     
     override func swipe(areaAccess: AreaAccess) -> Bool {

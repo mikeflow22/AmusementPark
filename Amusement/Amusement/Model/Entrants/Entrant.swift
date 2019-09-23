@@ -28,8 +28,8 @@ class Entrant: SwipePass {
         return false
     }
     
-    func swipe(discount: Discount) -> Int {
-        return 0
+    func swipe(discount: Discount) -> Float {
+        return 0.0
     }
     
     
