@@ -39,7 +39,7 @@ class Manager: Entrant {
     
     override func swipe(discount: Discount) -> Float {
         if discount == .foodDiscount {
-            return 0.15
+            return 0.25
         }
         
         if discount == .merchandiseDiscount {
