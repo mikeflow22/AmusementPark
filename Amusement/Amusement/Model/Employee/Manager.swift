@@ -48,3 +48,5 @@ class Manager: Entrant {
         return 0.0
     }
 }
+
+
