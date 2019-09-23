@@ -13,6 +13,7 @@ enum AmusementParkError: Error {
     case noBirthdayProvided(description: String)
     case noFirstNameProvided(description: String)
     case noLastNameProvided(description: String)
+    case incompleteHomeAddress(description: String)
     case incorrectDiscountAmount(description: String)
     case notPermittedAccessInArea(description: String)
     case doNotHaveAccessToAllRides(description: String)

@@ -7,33 +7,17 @@
 //
 
 import Foundation
-class EmployeeInformation: Entrant  {
-    var rideAccess: [RideAccess]
+struct EmployeeInformation {
+  
     
-    var areaAccess: [AreaAccess]
+    var firstName: String?
+    var lastName: String?
+    var streetAddress: String?
+    var cityName: String?
+    var state: String?
+    var zipCode: Int?
     
-    var discount: [Discount]
-    
-    func swipe(areaAccess: AreaAccess) -> Bool {
-        return true
-    }
-    
-    func swipe(rideAccess: RideAccess) -> Bool {
-        return true
-    }
-    
-    func swipe(discount: Discount) -> Int {
-        return 10
-    }
-    
-    var firstName: String
-    var lastName: String
-    var streetAddress: String
-    var cityName: String
-    var state: String
-    var zipCode: Int
-    
-    init(firstName: String, lastName: String, streetAddress: String, cityName: String, state: String, zipCode: Int, rideAccess: [RideAccess] = [.allRides],areaAccess: [AreaAccess] = [.amusement]){
+    init(firstName: String?, lastName: String?, streetAddress: String?, cityName: String?, state: String?, zipCode: Int?){
         self.firstName = firstName
         self.lastName = lastName
         self.streetAddress = streetAddress

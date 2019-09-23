@@ -7,11 +7,46 @@
 //
 
 import Foundation
-class HourlyEmployeeFoodService: EmployeeInformation {
+class HourlyEmployeeFoodService: Entrant {
     
-//    init() throws {
-//        super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, cityName: cityName, state: state, zipCode: zipCode, rideAccess: [RideAccess] = [.allRides], areaAccess: [AreaAccess] = [.amusement, .kitchen])
-//
-//    }
+    
+    init(employeeInformation: EmployeeInformation) throws {
+        super.init(rideAccess: [.allRides], areaAccess: [.amusement, .kitchen], discount: [.foodDiscount, .merchandiseDiscount])
+        
+        guard employeeInformation.firstName != nil else {
+            throw AmusementParkError.noFirstNameProvided(description: "Please provide first name.")
+        }
+        guard employeeInformation.lastName != nil else {
+            throw AmusementParkError.noLastNameProvided(description: "Please Provide last name.")
+        }
+        guard employeeInformation.streetAddress != nil else {
+            throw AmusementParkError.incompleteHomeAddress(description: "Sreet address missing.")
+        }
+        guard employeeInformation.state != nil else {
+            throw AmusementParkError.incompleteHomeAddress(description: "State missing")
+        }
+        guard employeeInformation.zipCode != nil else {
+            throw AmusementParkError.incompleteHomeAddress(description: "Zipcode missing.")
+        }
+    }
+    
+    override func swipe(rideAccess: RideAccess) -> Bool {
+        return !self.rideAccess.isEmpty
+    }
+    
+    override func swipe(areaAccess: AreaAccess) -> Bool {
+        return !self.areaAccess.isEmpty
+    }
+    
+    override func swipe(discount: Discount) -> Float {
+        if discount == .foodDiscount {
+            return 0.15
+        }
+        
+        if discount == .merchandiseDiscount {
+            return 0.25
+        }
+        return 0.0
+    }
     
 }
