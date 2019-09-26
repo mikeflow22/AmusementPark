@@ -10,7 +10,7 @@ import Foundation
 class HourlyEmployeeFoodService: Entrant {
     
     
-    init(employeeInformation: EmployeeInformation) throws {
+    init(employeeInformation: PersonalInformation) throws {
         super.init(rideAccess: [.allRides], areaAccess: [.amusement, .kitchen], discount: [.foodDiscount, .merchandiseDiscount])
         
         guard employeeInformation.firstName != nil else {

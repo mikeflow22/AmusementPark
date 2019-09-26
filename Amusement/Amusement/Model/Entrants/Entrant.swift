@@ -12,9 +12,9 @@ class Entrant: SwipePass {
     
     var rideAccess: [RideAccess]
     var areaAccess: [AreaAccess]
-    var discount: [Discount]
+    var discount: [DiscountType]
     
-    init(rideAccess: [RideAccess], areaAccess: [AreaAccess], discount: [Discount]){
+    init(rideAccess: [RideAccess], areaAccess: [AreaAccess], discount: [DiscountType]){
         self.rideAccess = rideAccess
         self.areaAccess = areaAccess
         self.discount = discount
@@ -28,7 +28,7 @@ class Entrant: SwipePass {
         return false
     }
     
-    func swipe(discount: Discount) -> Float {
+    func swipe(discount: DiscountType) -> Float {
         return 0.0
     }
     

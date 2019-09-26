@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct EmployeeInformation {
+struct PersonalInformation {
   
     
     var firstName: String?

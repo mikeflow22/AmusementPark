@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B0FD430233C3A6600E0A3A8 /* EntrantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FD42F233C3A6600E0A3A8 /* EntrantType.swift */; };
 		1B0FD432233C3AFE00E0A3A8 /* PassType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FD431233C3AFE00E0A3A8 /* PassType.swift */; };
+		1B0FD434233C3C2E00E0A3A8 /* DiscountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FD433233C3C2E00E0A3A8 /* DiscountType.swift */; };
 		1B3E9B0B2336F9620057187F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B0A2336F9620057187F /* AppDelegate.swift */; };
 		1B3E9B0D2336F9620057187F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B0C2336F9620057187F /* ViewController.swift */; };
 		1B3E9B102336F9620057187F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3E9B0E2336F9620057187F /* Main.storyboard */; };
@@ -23,7 +24,7 @@
 		1B3E9B2B233708550057187F /* ChildGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B2A233708550057187F /* ChildGuest.swift */; };
 		1B3E9B2D233708700057187F /* RideAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B2C233708700057187F /* RideAccess.swift */; };
 		1B3E9B2F233708940057187F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B2E233708940057187F /* Employee.swift */; };
-		1B3E9B31233708CA0057187F /* EmployeeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B30233708CA0057187F /* EmployeeInformation.swift */; };
+		1B3E9B31233708CA0057187F /* PersonalInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B30233708CA0057187F /* PersonalInformation.swift */; };
 		1B3E9B3723370A670057187F /* SwipePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B3623370A670057187F /* SwipePass.swift */; };
 		1BC84A03233803130032D80D /* HourlyEmployeeFoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC84A02233803130032D80D /* HourlyEmployeeFoodService.swift */; };
 		1BC84A05233864650032D80D /* HourlyEmployeeMaintenance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC84A04233864650032D80D /* HourlyEmployeeMaintenance.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		1B0FD42F233C3A6600E0A3A8 /* EntrantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantType.swift; sourceTree = "<group>"; };
 		1B0FD431233C3AFE00E0A3A8 /* PassType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassType.swift; sourceTree = "<group>"; };
+		1B0FD433233C3C2E00E0A3A8 /* DiscountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountType.swift; sourceTree = "<group>"; };
 		1B3E9B072336F9620057187F /* Amusement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amusement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3E9B0A2336F9620057187F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B3E9B0C2336F9620057187F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		1B3E9B2A233708550057187F /* ChildGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildGuest.swift; sourceTree = "<group>"; };
 		1B3E9B2C233708700057187F /* RideAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideAccess.swift; sourceTree = "<group>"; };
 		1B3E9B2E233708940057187F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
-		1B3E9B30233708CA0057187F /* EmployeeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformation.swift; sourceTree = "<group>"; };
+		1B3E9B30233708CA0057187F /* PersonalInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformation.swift; sourceTree = "<group>"; };
 		1B3E9B3623370A670057187F /* SwipePass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePass.swift; sourceTree = "<group>"; };
 		1BC84A02233803130032D80D /* HourlyEmployeeFoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployeeFoodService.swift; sourceTree = "<group>"; };
 		1BC84A04233864650032D80D /* HourlyEmployeeMaintenance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployeeMaintenance.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				1B0FD42F233C3A6600E0A3A8 /* EntrantType.swift */,
 				1B0FD431233C3AFE00E0A3A8 /* PassType.swift */,
+				1B0FD433233C3C2E00E0A3A8 /* DiscountType.swift */,
 			);
 			path = "Model Types";
 			sourceTree = "<group>";
@@ -142,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				1B3E9B2E233708940057187F /* Employee.swift */,
-				1B3E9B30233708CA0057187F /* EmployeeInformation.swift */,
+				1B3E9B30233708CA0057187F /* PersonalInformation.swift */,
 				1BC84A02233803130032D80D /* HourlyEmployeeFoodService.swift */,
 				1BC84A06233865C40032D80D /* HourlyEmployeeRideServices.swift */,
 				1BC84A08233866760032D80D /* Manager.swift */,
@@ -244,7 +247,7 @@
 			files = (
 				1B3E9B292337083F0057187F /* VipGuest.swift in Sources */,
 				1B3E9B2D233708700057187F /* RideAccess.swift in Sources */,
-				1B3E9B31233708CA0057187F /* EmployeeInformation.swift in Sources */,
+				1B3E9B31233708CA0057187F /* PersonalInformation.swift in Sources */,
 				1B3E9B1F2336FAAC0057187F /* Entrant.swift in Sources */,
 				1B0FD430233C3A6600E0A3A8 /* EntrantType.swift in Sources */,
 				1B3E9B2F233708940057187F /* Employee.swift in Sources */,
@@ -254,6 +257,7 @@
 				1B3E9B27233708090057187F /* ClassicGuest.swift in Sources */,
 				1B3E9B232336FE5A0057187F /* Discount.swift in Sources */,
 				1BC84A03233803130032D80D /* HourlyEmployeeFoodService.swift in Sources */,
+				1B0FD434233C3C2E00E0A3A8 /* DiscountType.swift in Sources */,
 				1B3E9B3723370A670057187F /* SwipePass.swift in Sources */,
 				1BC84A07233865C40032D80D /* HourlyEmployeeRideServices.swift in Sources */,
 				1B3E9B252336FFA60057187F /* AreaAccess.swift in Sources */,

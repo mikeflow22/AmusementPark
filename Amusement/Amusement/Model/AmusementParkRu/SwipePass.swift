@@ -10,5 +10,5 @@ import Foundation
 protocol SwipePass {
     func swipe(areaAccess: AreaAccess) -> Bool
     func swipe(rideAccess: RideAccess) -> Bool
-    func swipe(discount: Discount) -> Float
+    func swipe(discount: DiscountType) -> Float
 }
