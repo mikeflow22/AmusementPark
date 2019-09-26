@@ -10,12 +10,8 @@ import Foundation
 
 class ClassicGuest: Entrant {
 
-    init() throws {
-        super.init(rideAccess: [.allRides], areaAccess: [.amusement], discount: [])
-    }
-    
-    override func swipe(discount: Discount) -> Float {
-        return 0.0
+    init(){
+        super.init(entrantType: .guest, passType: .classicGuest, rideAccess: [.allRides], areaAccess: [.amusement], discountType: [])
     }
     
     override func swipe(areaAccess: AreaAccess) -> Bool {
@@ -24,5 +20,8 @@ class ClassicGuest: Entrant {
     
     override func swipe(rideAccess: RideAccess) -> Bool {
         return self.rideAccess.contains(.allRides)
+    }
+   override func swipe(discount: DiscountType) -> Float {
+        return 0.0
     }
 }
