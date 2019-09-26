@@ -11,7 +11,7 @@ import Foundation
 class HourlyEmployeeRideServices: Entrant {
     
     init(employeeInformation: PersonalInformation) throws {
-        super.init(entrantType: .hourlyEmployee, passType: .hourlyEmplyoeeRideServices, rideAccess: [.allRides], areaAccess: [.amusement, .kitchen], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
+        super.init(entrantType: .hourlyEmployee, passType: .hourlyEmplyoeeRideServices, rideAccess: [.allRides], areaAccess: [.amusement, .rideControl], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
         
         guard employeeInformation.firstName != nil else {
             throw AmusementParkError.noFirstNameProvided

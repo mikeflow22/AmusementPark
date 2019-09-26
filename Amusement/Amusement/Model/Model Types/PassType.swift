@@ -14,4 +14,5 @@ enum PassType: String {
     case hourlyEmployeeFoodServices = "Hourly Food Service"
     case hourlyEmplyoeeRideServices = "Hourly Ride Service"
     case hourlyEmployeeMaintenance = "Hourly Maintenance"
+    case manager = "Manager"
 }
