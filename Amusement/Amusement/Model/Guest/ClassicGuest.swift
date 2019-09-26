@@ -24,4 +24,5 @@ class ClassicGuest: Entrant {
    override func swipe(discount: DiscountType) -> Float {
         return 0.0
     }
+    
 }

@@ -24,20 +24,20 @@ class ChildGuest: Entrant {
     
     init(dateOfBirth: Date?) throws {
         guard let bornDay = dateOfBirth else {
-            throw AmusementParkError.noBirthdayProvided(description: "Missing Date of Birth")
+            throw AmusementParkError.noBirthdayProvided
         }
         
-        super.init(rideAccess: [.allRides, .skipLinePass], areaAccess: [.amusement], discount: [.foodDiscount, .merchandiseDiscount])
+        super.init(entrantType: .guest, passType: .freeChild, rideAccess: [.allRides], areaAccess: [.amusement], discountType: [])
         
         guard isFree else {
-            throw AmusementParkError.notUnderTheFreeChildAgeLimit(description: "Child must be younger than \(5) years old")
+            throw AmusementParkError.notUnderTheFreeChildAgeLimit
             
         }
         
         self.dateOfBirth = bornDay
     }
     
-    override func swipe(discount: Discount) -> Float {
+    override func swipe(discount: DiscountType) -> Float {
         return 0.0
     }
     
