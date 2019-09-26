@@ -11,22 +11,22 @@ import Foundation
 class HourlyEmployeeRideServices: Entrant {
     
     init(employeeInformation: PersonalInformation) throws {
-        super.init(rideAccess: [.allRides], areaAccess: [.amusement, .rideControl], discount: [.foodDiscount, .merchandiseDiscount])
+        super.init(entrantType: .hourlyEmployee, passType: .hourlyEmplyoeeRideServices, rideAccess: [.allRides], areaAccess: [.amusement, .kitchen], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
         
         guard employeeInformation.firstName != nil else {
-            throw AmusementParkError.noFirstNameProvided(description: "Please provide first name.")
+            throw AmusementParkError.noFirstNameProvided
         }
         guard employeeInformation.lastName != nil else {
-            throw AmusementParkError.noLastNameProvided(description: "Please Provide last name.")
+            throw AmusementParkError.noLastNameProvided
         }
         guard employeeInformation.streetAddress != nil else {
-            throw AmusementParkError.incompleteHomeAddress(description: "Sreet address missing.")
+            throw AmusementParkError.noStreetAddress
         }
         guard employeeInformation.state != nil else {
-            throw AmusementParkError.incompleteHomeAddress(description: "State missing")
+            throw AmusementParkError.noState
         }
         guard employeeInformation.zipCode != nil else {
-            throw AmusementParkError.incompleteHomeAddress(description: "Zipcode missing.")
+            throw AmusementParkError.noZipCode
         }
     }
     
@@ -38,7 +38,7 @@ class HourlyEmployeeRideServices: Entrant {
         return !self.areaAccess.isEmpty
     }
     
-    override func swipe(discount: Discount) -> Float {
+    override func swipe(discount: DiscountType) -> Float {
         if discount == .foodDiscount {
             return 0.15
         }

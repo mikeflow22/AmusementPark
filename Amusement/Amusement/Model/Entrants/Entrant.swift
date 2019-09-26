@@ -48,8 +48,4 @@ class Entrant: SwipePass {
     func swipe(discount: DiscountType) -> Float {
         return 0.0
     }
-    
-    
-
 }
-

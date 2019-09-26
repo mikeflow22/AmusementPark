@@ -17,6 +17,7 @@ enum AmusementParkError: Error {
     case incompleteHomeAddress
     case noStreetAddress
     case noCityName
+    case noState
     case noZipCode
     case incorrectDiscountAmount
     case notPermittedAccessInArea
@@ -41,6 +42,8 @@ enum AmusementParkError: Error {
             return "missing street address"
         case .noCityName:
             return "Missing city name"
+        case .noState:
+            return "Missing State"
         case .noZipCode:
             return "Missing zipcode"
         case .incorrectDiscountAmount:
