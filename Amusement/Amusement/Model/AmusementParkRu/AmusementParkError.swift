@@ -8,26 +8,16 @@
 
 import Foundation
 
-enum AmusementParkError: Error {
-    case noPersonalInformation(description: String)
-    case noBirthdayProvided(description: String)
-    case noFirstNameProvided(description: String)
-    case noLastNameProvided(description: String)
-    case incompleteHomeAddress(description: String)
-    case incorrectDiscountAmount(description: String)
-    case notPermittedAccessInArea(description: String)
-    case doNotHaveAccessToAllRides(description: String)
-    case notPermittedToSkipLines(description: String)
-    case notUnderTheFreeChildAgeLimit(description: String)
-   
-}
 
-enum MyCustomError: Error {
+enum AmusementParkError: Error {
     case noPersonalInformation
     case noBirthdayProvided
     case noFirstNameProvided
     case noLastNameProvided
     case incompleteHomeAddress
+    case noStreetAddress
+    case noCityName
+    case noZipCode
     case incorrectDiscountAmount
     case notPermittedAccessInArea
     case doNotHaveAccessToAllRides
@@ -47,6 +37,12 @@ enum MyCustomError: Error {
             return "no last name provided."
         case .incompleteHomeAddress:
             return "Incomplete home address"
+        case .noStreetAddress:
+            return "missing street address"
+        case .noCityName:
+            return "Missing city name"
+        case .noZipCode:
+            return "Missing zipcode"
         case .incorrectDiscountAmount:
             return "Discount amount is incorrect"
         case .notPermittedAccessInArea:
