@@ -12,7 +12,7 @@ class VIPGuest: Entrant {
     //we dont have to put the variables here because our parent class has them so we can just access them in our init
     
     init() throws {
-        super.init(rideAccess: [.allRides, .skipLinePass], areaAccess: [.amusement], discount: [.foodDiscount, .merchandiseDiscount])
+       super.init(entrantType: .guest, passType: .vipguest, rideAccess: [.allRides, .skipLinePass], areaAccess: [.amusement], discountType: [.foodDiscount, .merchandiseDiscount])
     }
     
     override func swipe(rideAccess: RideAccess) -> Bool {
@@ -24,7 +24,7 @@ class VIPGuest: Entrant {
         return !self.areaAccess.isEmpty
     }
     
-    override func swipe(discount: Discount) -> Float {
+    override func swipe(discount: DiscountType) -> Float {
         
         if discount == .foodDiscount {
             return 0.1
