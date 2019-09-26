@@ -31,6 +31,7 @@ class ChildGuest: Entrant {
         
         guard isFree else {
             throw AmusementParkError.notUnderTheFreeChildAgeLimit(description: "Child must be younger than \(5) years old")
+            
         }
         
         self.dateOfBirth = bornDay

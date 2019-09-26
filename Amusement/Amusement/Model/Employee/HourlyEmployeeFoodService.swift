@@ -15,6 +15,8 @@ class HourlyEmployeeFoodService: Entrant {
         
         guard employeeInformation.firstName != nil else {
             throw AmusementParkError.noFirstNameProvided(description: "Please provide first name.")
+//            throw MyCustomError.noBirthdayProvided
+//            print(MyCustomError.noBirthdayProvided)
         }
         guard employeeInformation.lastName != nil else {
             throw AmusementParkError.noLastNameProvided(description: "Please Provide last name.")
