@@ -7,12 +7,13 @@
 //
 
 import Foundation
-//enum Discount {
-//    case foodDiscount
-//    case merchandiseDiscount
-//
-//}
+enum Discount {
+    case foodDiscount
+    case merchandiseDiscount
 
+}
+
+//figure out how to implement this
 //enum Discount {
 //    case foodDiscount(amount: Float)
 //    case merchandiseDiscount(amount: Float)

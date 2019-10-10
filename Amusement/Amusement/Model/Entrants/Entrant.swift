@@ -16,10 +16,10 @@ class Entrant: SwipePass {
     var discountType: [DiscountType]
     var rideAccess: [RideAccess]
     var areaAccess: [AreaAccess]
-    var personInformation: PersonalInformation
+    var personInformation: PersonalInformation?
    
     
-    init(entrantType: EntrantType, passType: PassType,  rideAccess: [RideAccess], areaAccess: [AreaAccess], discountType: [DiscountType], personInformation: PersonalInformation){
+    init(entrantType: EntrantType, passType: PassType,  rideAccess: [RideAccess], areaAccess: [AreaAccess], discountType: [DiscountType], personInformation: PersonalInformation? = nil){
         self.entrantType = entrantType
         self.passType = passType
         self.rideAccess = rideAccess
@@ -28,14 +28,14 @@ class Entrant: SwipePass {
         self.personInformation = personInformation
     }
     
-    init(entrantType: EntrantType, passType: PassType,  rideAccess: [RideAccess], areaAccess: [AreaAccess], discountType: [DiscountType]){
-        self.entrantType = entrantType
-        self.passType = passType
-        self.rideAccess = rideAccess
-        self.areaAccess = areaAccess
-        self.discountType = discountType
-        self.personInformation =  PersonalInformation(firstName: nil, lastName: nil, streetAddress: nil, cityName: nil, state: nil, zipCode: nil)
-    }
+//    init(entrantType: EntrantType, passType: PassType,  rideAccess: [RideAccess], areaAccess: [AreaAccess], discountType: [DiscountType]){
+//        self.entrantType = entrantType
+//        self.passType = passType
+//        self.rideAccess = rideAccess
+//        self.areaAccess = areaAccess
+//        self.discountType = discountType
+//        self.personInformation =  PersonalInformation(firstName: nil, lastName: nil, streetAddress: nil, cityName: nil, state: nil, zipCode: nil)
+//    }
     
     func swipe(areaAccess: AreaAccess) -> Bool {
         return false

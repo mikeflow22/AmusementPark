@@ -26,10 +26,13 @@
 		1B3E9B2F233708940057187F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B2E233708940057187F /* Employee.swift */; };
 		1B3E9B31233708CA0057187F /* PersonalInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B30233708CA0057187F /* PersonalInformation.swift */; };
 		1B3E9B3723370A670057187F /* SwipePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B3623370A670057187F /* SwipePass.swift */; };
+		1B708BAE234FCA78006EBEEF /* GuestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B708BAD234FCA78006EBEEF /* GuestType.swift */; };
+		1B708BB0234FCAF1006EBEEF /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B708BAF234FCAF1006EBEEF /* Guest.swift */; };
 		1BC84A03233803130032D80D /* HourlyEmployeeFoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC84A02233803130032D80D /* HourlyEmployeeFoodService.swift */; };
 		1BC84A05233864650032D80D /* HourlyEmployeeMaintenance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC84A04233864650032D80D /* HourlyEmployeeMaintenance.swift */; };
 		1BC84A07233865C40032D80D /* HourlyEmployeeRideServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC84A06233865C40032D80D /* HourlyEmployeeRideServices.swift */; };
 		1BC84A09233866760032D80D /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC84A08233866760032D80D /* Manager.swift */; };
+		1BFC0737233D6659002E71BD /* TestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC0736233D6659002E71BD /* TestCases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +57,13 @@
 		1B3E9B2E233708940057187F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		1B3E9B30233708CA0057187F /* PersonalInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformation.swift; sourceTree = "<group>"; };
 		1B3E9B3623370A670057187F /* SwipePass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePass.swift; sourceTree = "<group>"; };
+		1B708BAD234FCA78006EBEEF /* GuestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestType.swift; sourceTree = "<group>"; };
+		1B708BAF234FCAF1006EBEEF /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		1BC84A02233803130032D80D /* HourlyEmployeeFoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployeeFoodService.swift; sourceTree = "<group>"; };
 		1BC84A04233864650032D80D /* HourlyEmployeeMaintenance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployeeMaintenance.swift; sourceTree = "<group>"; };
 		1BC84A06233865C40032D80D /* HourlyEmployeeRideServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployeeRideServices.swift; sourceTree = "<group>"; };
 		1BC84A08233866760032D80D /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		1BFC0736233D6659002E71BD /* TestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 				1B0FD42F233C3A6600E0A3A8 /* EntrantType.swift */,
 				1B0FD431233C3AFE00E0A3A8 /* PassType.swift */,
 				1B0FD433233C3C2E00E0A3A8 /* DiscountType.swift */,
+				1B708BAD234FCA78006EBEEF /* GuestType.swift */,
 			);
 			path = "Model Types";
 			sourceTree = "<group>";
@@ -100,6 +107,7 @@
 		1B3E9B092336F9620057187F /* Amusement */ = {
 			isa = PBXGroup;
 			children = (
+				1BFC0736233D6659002E71BD /* TestCases.swift */,
 				1B3E9B1D2336F9EF0057187F /* Model */,
 				1B3E9B1C2336F9A70057187F /* Resources */,
 				1B3E9B0C2336F9620057187F /* ViewController.swift */,
@@ -137,6 +145,7 @@
 				1B3E9B26233708090057187F /* ClassicGuest.swift */,
 				1B3E9B2A233708550057187F /* ChildGuest.swift */,
 				1B3E9B282337083F0057187F /* VipGuest.swift */,
+				1B708BAF234FCAF1006EBEEF /* Guest.swift */,
 			);
 			path = Guest;
 			sourceTree = "<group>";
@@ -250,16 +259,19 @@
 				1B3E9B31233708CA0057187F /* PersonalInformation.swift in Sources */,
 				1B3E9B1F2336FAAC0057187F /* Entrant.swift in Sources */,
 				1B0FD430233C3A6600E0A3A8 /* EntrantType.swift in Sources */,
+				1BFC0737233D6659002E71BD /* TestCases.swift in Sources */,
 				1B3E9B2F233708940057187F /* Employee.swift in Sources */,
 				1B3E9B0D2336F9620057187F /* ViewController.swift in Sources */,
 				1B3E9B212336FAEA0057187F /* AmusementParkError.swift in Sources */,
 				1B3E9B2B233708550057187F /* ChildGuest.swift in Sources */,
+				1B708BB0234FCAF1006EBEEF /* Guest.swift in Sources */,
 				1B3E9B27233708090057187F /* ClassicGuest.swift in Sources */,
 				1B3E9B232336FE5A0057187F /* Discount.swift in Sources */,
 				1BC84A03233803130032D80D /* HourlyEmployeeFoodService.swift in Sources */,
 				1B0FD434233C3C2E00E0A3A8 /* DiscountType.swift in Sources */,
 				1B3E9B3723370A670057187F /* SwipePass.swift in Sources */,
 				1BC84A07233865C40032D80D /* HourlyEmployeeRideServices.swift in Sources */,
+				1B708BAE234FCA78006EBEEF /* GuestType.swift in Sources */,
 				1B3E9B252336FFA60057187F /* AreaAccess.swift in Sources */,
 				1BC84A05233864650032D80D /* HourlyEmployeeMaintenance.swift in Sources */,
 				1B3E9B0B2336F9620057187F /* AppDelegate.swift in Sources */,

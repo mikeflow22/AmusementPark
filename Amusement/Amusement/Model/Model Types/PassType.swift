@@ -8,6 +8,7 @@
 
 import Foundation
 enum PassType: String {
+    //should write a function to check to see if entrant has access to certtain areas
     case classicGuest = "Classic Geust"
     case vipguest = "VIP Guest"
     case freeChild = "Free Child"

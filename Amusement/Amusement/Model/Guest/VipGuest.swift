@@ -36,6 +36,5 @@ class VIPGuest: Entrant {
         
         return 0.0
     }
-    
-    
 }
+

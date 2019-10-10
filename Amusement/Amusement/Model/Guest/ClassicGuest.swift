@@ -10,7 +10,7 @@ import Foundation
 
 class ClassicGuest: Entrant {
 
-    init(){
+    init() throws {
         super.init(entrantType: .guest, passType: .classicGuest, rideAccess: [.allRides], areaAccess: [.amusement], discountType: [])
     }
     
@@ -26,3 +26,4 @@ class ClassicGuest: Entrant {
     }
     
 }
+
