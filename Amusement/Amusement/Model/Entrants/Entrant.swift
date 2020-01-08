@@ -10,7 +10,6 @@ import Foundation
 
 class Entrant: SwipePass {
     
-    
     var entrantType: EntrantType
     var passType: PassType
     var discountType: [DiscountType]

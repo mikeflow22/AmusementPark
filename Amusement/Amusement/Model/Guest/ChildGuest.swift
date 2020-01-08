@@ -17,8 +17,8 @@ class ChildGuest: Entrant {
     
     var dateOfBirth: Date?
     var age:  Int {
-        let today = Date()
-        let  dateComponents = Calendar.current.dateComponents([.year], from: dateOfBirth!, to: today)
+        let today = Date.distantPast
+        let  dateComponents = Calendar.current.dateComponents([.year], from: dateOfBirth ?? Date(), to: today)
         return dateComponents.year ?? 0
     }
     

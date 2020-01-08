@@ -20,6 +20,41 @@ struct PersonalInformation {
     
     //create a throwing init of all the properties
     init(firstName: String?, lastName: String?, streetAddress: String?, cityName: String?, state: String?, zipCode: String?) throws {
+        
+        
+        guard let firstName = firstName, !firstName.isEmpty else {
+            throw AmusementParkError.noFirstNameProvided
+        }
+          
+        
+                guard lastName != nil else {
+                    throw AmusementParkError.noLastNameProvided
+                }
+                if lastName?.count == 0 {
+                    throw AmusementParkError.noLastNameProvided
+                }
+        
+                guard streetAddress != nil else {
+                    throw AmusementParkError.noStreetAddress
+                }
+                if streetAddress?.count == 0 {
+                    throw  AmusementParkError.noStreetAddress
+                }
+        
+                guard cityName != nil else {
+                    throw AmusementParkError.noCityName
+                }
+                if cityName?.count == 0 {
+                    throw  AmusementParkError.noCityName
+                }
+        
+                guard zipCode != nil else {
+                    throw AmusementParkError.noZipCode
+                }
+                if zipCode?.count == 0 {
+                    throw AmusementParkError.noZipCode
+                }
+        
         self.firstName =  firstName
         self.lastName = lastName
         self.streetAddress = streetAddress

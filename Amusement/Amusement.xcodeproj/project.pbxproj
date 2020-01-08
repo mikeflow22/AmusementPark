@@ -11,7 +11,6 @@
 		1B0FD432233C3AFE00E0A3A8 /* PassType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FD431233C3AFE00E0A3A8 /* PassType.swift */; };
 		1B0FD434233C3C2E00E0A3A8 /* DiscountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FD433233C3C2E00E0A3A8 /* DiscountType.swift */; };
 		1B3E9B0B2336F9620057187F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B0A2336F9620057187F /* AppDelegate.swift */; };
-		1B3E9B0D2336F9620057187F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B0C2336F9620057187F /* ViewController.swift */; };
 		1B3E9B102336F9620057187F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3E9B0E2336F9620057187F /* Main.storyboard */; };
 		1B3E9B122336F9630057187F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3E9B112336F9630057187F /* Assets.xcassets */; };
 		1B3E9B152336F9630057187F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3E9B132336F9630057187F /* LaunchScreen.storyboard */; };
@@ -28,6 +27,8 @@
 		1B3E9B3723370A670057187F /* SwipePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E9B3623370A670057187F /* SwipePass.swift */; };
 		1B708BAE234FCA78006EBEEF /* GuestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B708BAD234FCA78006EBEEF /* GuestType.swift */; };
 		1B708BB0234FCAF1006EBEEF /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B708BAF234FCAF1006EBEEF /* Guest.swift */; };
+		1B72CDD623C632E80073C1F1 /* HomePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72CDD523C632E80073C1F1 /* HomePageTableViewController.swift */; };
+		1B72CDD823C642F70073C1F1 /* RandomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B72CDD723C642F70073C1F1 /* RandomData.swift */; };
 		1BC84A03233803130032D80D /* HourlyEmployeeFoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC84A02233803130032D80D /* HourlyEmployeeFoodService.swift */; };
 		1BC84A05233864650032D80D /* HourlyEmployeeMaintenance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC84A04233864650032D80D /* HourlyEmployeeMaintenance.swift */; };
 		1BC84A07233865C40032D80D /* HourlyEmployeeRideServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC84A06233865C40032D80D /* HourlyEmployeeRideServices.swift */; };
@@ -41,7 +42,6 @@
 		1B0FD433233C3C2E00E0A3A8 /* DiscountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountType.swift; sourceTree = "<group>"; };
 		1B3E9B072336F9620057187F /* Amusement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amusement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3E9B0A2336F9620057187F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B3E9B0C2336F9620057187F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1B3E9B0F2336F9620057187F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B3E9B112336F9630057187F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B3E9B142336F9630057187F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		1B3E9B3623370A670057187F /* SwipePass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePass.swift; sourceTree = "<group>"; };
 		1B708BAD234FCA78006EBEEF /* GuestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestType.swift; sourceTree = "<group>"; };
 		1B708BAF234FCAF1006EBEEF /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		1B72CDD523C632E80073C1F1 /* HomePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewController.swift; sourceTree = "<group>"; };
+		1B72CDD723C642F70073C1F1 /* RandomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomData.swift; sourceTree = "<group>"; };
 		1BC84A02233803130032D80D /* HourlyEmployeeFoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployeeFoodService.swift; sourceTree = "<group>"; };
 		1BC84A04233864650032D80D /* HourlyEmployeeMaintenance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployeeMaintenance.swift; sourceTree = "<group>"; };
 		1BC84A06233865C40032D80D /* HourlyEmployeeRideServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployeeRideServices.swift; sourceTree = "<group>"; };
@@ -110,8 +112,8 @@
 				1BFC0736233D6659002E71BD /* TestCases.swift */,
 				1B3E9B1D2336F9EF0057187F /* Model */,
 				1B3E9B1C2336F9A70057187F /* Resources */,
-				1B3E9B0C2336F9620057187F /* ViewController.swift */,
 				1B3E9B0E2336F9620057187F /* Main.storyboard */,
+				1B72CDD523C632E80073C1F1 /* HomePageTableViewController.swift */,
 			);
 			path = Amusement;
 			sourceTree = "<group>";
@@ -135,6 +137,7 @@
 				1B3E9B342337090F0057187F /* AmusementParkRu */,
 				1B3E9B33233708FA0057187F /* Employee */,
 				1B3E9B32233708DB0057187F /* Guest */,
+				1B72CDD723C642F70073C1F1 /* RandomData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,11 +263,12 @@
 				1B3E9B1F2336FAAC0057187F /* Entrant.swift in Sources */,
 				1B0FD430233C3A6600E0A3A8 /* EntrantType.swift in Sources */,
 				1BFC0737233D6659002E71BD /* TestCases.swift in Sources */,
+				1B72CDD823C642F70073C1F1 /* RandomData.swift in Sources */,
 				1B3E9B2F233708940057187F /* Employee.swift in Sources */,
-				1B3E9B0D2336F9620057187F /* ViewController.swift in Sources */,
 				1B3E9B212336FAEA0057187F /* AmusementParkError.swift in Sources */,
 				1B3E9B2B233708550057187F /* ChildGuest.swift in Sources */,
 				1B708BB0234FCAF1006EBEEF /* Guest.swift in Sources */,
+				1B72CDD623C632E80073C1F1 /* HomePageTableViewController.swift in Sources */,
 				1B3E9B27233708090057187F /* ClassicGuest.swift in Sources */,
 				1B3E9B232336FE5A0057187F /* Discount.swift in Sources */,
 				1BC84A03233803130032D80D /* HourlyEmployeeFoodService.swift in Sources */,
@@ -432,7 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = flowers.Amusement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -450,7 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = flowers.Amusement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
