@@ -11,4 +11,5 @@ enum EntrantType: String {
     case guest = "Guest"
     case hourlyEmployee = "HourlyEmployee"
     case manager = "Manager"
+    case vendor = "Vendor"
 }

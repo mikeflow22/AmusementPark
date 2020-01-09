@@ -10,7 +10,6 @@ import Foundation
 
 //[REVIEW] - A bunch of stuff would have been easier when you had used protocol composition rather than class inheritance. No need to change things now, but something to remember for the future.
 class Entrant: SwipePass {
-    
     var entrantType: EntrantType
     var passType: PassType
     var discountType: [DiscountType]
@@ -18,7 +17,6 @@ class Entrant: SwipePass {
     var areaAccess: [AreaAccess]
     var personInformation: PersonalInformation?
    
-    
     init(entrantType: EntrantType, passType: PassType,  rideAccess: [RideAccess], areaAccess: [AreaAccess], discountType: [DiscountType], personInformation: PersonalInformation? = nil){
         self.entrantType = entrantType
         self.passType = passType
@@ -27,15 +25,6 @@ class Entrant: SwipePass {
         self.discountType = discountType
         self.personInformation = personInformation
     }
-    
-//    init(entrantType: EntrantType, passType: PassType,  rideAccess: [RideAccess], areaAccess: [AreaAccess], discountType: [DiscountType]){
-//        self.entrantType = entrantType
-//        self.passType = passType
-//        self.rideAccess = rideAccess
-//        self.areaAccess = areaAccess
-//        self.discountType = discountType
-//        self.personInformation =  PersonalInformation(firstName: nil, lastName: nil, streetAddress: nil, cityName: nil, state: nil, zipCode: nil)
-//    }
     
     func swipe(areaAccess: AreaAccess) -> Bool {
         return false

@@ -12,4 +12,6 @@ enum GuestType  {
     case classic
     case vip
     case child
+    case seasonPass
+    case seniorGuest
 }

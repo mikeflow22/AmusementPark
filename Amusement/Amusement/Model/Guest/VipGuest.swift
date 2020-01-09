@@ -10,7 +10,6 @@ import Foundation
 class VIPGuest: Entrant {
    
     //we dont have to put the variables here because our parent class has them so we can just access them in our init
-    
     init() throws {
        super.init(entrantType: .guest, passType: .vipguest, rideAccess: [.allRides, .skipLinePass], areaAccess: [.amusement], discountType: [.foodDiscount, .merchandiseDiscount])
     }

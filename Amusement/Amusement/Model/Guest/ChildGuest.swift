@@ -9,12 +9,6 @@
 import Foundation
 
 class ChildGuest: Entrant {
-    
-    //[REVIEW] - We can omit this one since you only need it to initialize the object.
-//    var isFree: Bool {
-//        return age < 5
-//    }
-    
     //[REVIEW] - dateOfBirth shouldn't be optional since this is a required property for the child guest.
     var dateOfBirth: Date
     

@@ -12,8 +12,12 @@ enum PassType: String {
     case classicGuest = "Classic Geust"
     case vipguest = "VIP Guest"
     case freeChild = "Free Child"
+    case seasonPass = "Season Pass"
+    case seniorGuest = "Senior Guest"
     case hourlyEmployeeFoodServices = "Hourly Food Service"
     case hourlyEmplyoeeRideServices = "Hourly Ride Service"
     case hourlyEmployeeMaintenance = "Hourly Maintenance"
+    case contractEmployee = "Contract Employee"
+    case vendor = "Vendor"
     case manager = "Manager"
 }

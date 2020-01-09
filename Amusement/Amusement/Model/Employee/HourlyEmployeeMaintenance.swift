@@ -9,26 +9,17 @@
 import Foundation
 
 class HourlyEmployeeMaintenance: Entrant {
+    let SSN: String
+    let dateOfBirth: Date
     
-    init(employeeInformation: PersonalInformation) throws {
-        super.init(entrantType: .hourlyEmployee, passType: .hourlyEmployeeMaintenance, rideAccess: [.allRides], areaAccess: [.amusement, .kitchen, .rideControl, .maintenance], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
+    init(employeeInformation: PersonalInformation, SSN: String?, dateOfBirth: Date?) throws {
+        guard let SSN = SSN, !SSN.isEmpty else { throw AmusementParkError.noSSNProvided }
+        guard let dateOfBirth = dateOfBirth else { throw AmusementParkError.noBirthdayProvided }
         
-        //[REVIEW] - As discussed during our call I would change those and all other initializers to the one you have PersonalInformation
-        guard employeeInformation.firstName != nil else {
-            throw AmusementParkError.noFirstNameProvided
-        }
-        guard employeeInformation.lastName != nil else {
-            throw AmusementParkError.noLastNameProvided
-        }
-        guard employeeInformation.streetAddress != nil else {
-            throw AmusementParkError.noStreetAddress
-        }
-        guard employeeInformation.state != nil else {
-            throw AmusementParkError.noState
-        }
-        guard employeeInformation.zipCode != nil else {
-            throw AmusementParkError.noZipCode
-        }
+        self.SSN = SSN
+        self.dateOfBirth = dateOfBirth
+        
+        super.init(entrantType: .hourlyEmployee, passType: .hourlyEmployeeMaintenance, rideAccess: [.allRides], areaAccess: [.amusement, .kitchen, .rideControl, .maintenance], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
     }
     
     override func swipe(rideAccess: RideAccess) -> Bool {

@@ -7,9 +7,8 @@
 //
 
 import Foundation
+
 struct PersonalInformation {
-  
-    
     var firstName: String?
     var lastName: String?
     var streetAddress: String?
@@ -17,44 +16,14 @@ struct PersonalInformation {
     var state: String?
     var zipCode: String?
     
-    
     //create a throwing init of all the properties
     init(firstName: String?, lastName: String?, streetAddress: String?, cityName: String?, state: String?, zipCode: String?) throws {
-        
-        
-        guard let firstName = firstName, !firstName.isEmpty else {
-            throw AmusementParkError.noFirstNameProvided
-        }
-          
-        
-                guard lastName != nil else {
-                    throw AmusementParkError.noLastNameProvided
-                }
-                if lastName?.count == 0 {
-                    throw AmusementParkError.noLastNameProvided
-                }
-        
-                guard streetAddress != nil else {
-                    throw AmusementParkError.noStreetAddress
-                }
-                if streetAddress?.count == 0 {
-                    throw  AmusementParkError.noStreetAddress
-                }
-        
-                guard cityName != nil else {
-                    throw AmusementParkError.noCityName
-                }
-                if cityName?.count == 0 {
-                    throw  AmusementParkError.noCityName
-                }
-        
-                guard zipCode != nil else {
-                    throw AmusementParkError.noZipCode
-                }
-                if zipCode?.count == 0 {
-                    throw AmusementParkError.noZipCode
-                }
-        
+        guard let firstName = firstName, !firstName.isEmpty else { throw AmusementParkError.noFirstNameProvided }
+        guard let lastName = lastName, !lastName.isEmpty else { throw AmusementParkError.noLastNameProvided }
+        guard let streetAddress = streetAddress, !streetAddress.isEmpty else { throw AmusementParkError.noStreetAddress }
+        guard let cityName = cityName, !cityName.isEmpty else { throw AmusementParkError.noCityName }
+        guard let zipCode = zipCode, !zipCode.isEmpty else { throw AmusementParkError.noZipCode }
+
         self.firstName =  firstName
         self.lastName = lastName
         self.streetAddress = streetAddress
@@ -62,44 +31,4 @@ struct PersonalInformation {
         self.state = state
         self.zipCode = zipCode
     }
-    
-    //[REVIEW] - Delete code you don't need anymore. There are a couple of files in your project that only have commented code in them. You should get rid of those too.
-//    func testCases() throws {
-//        guard firstName != nil else {
-//            throw AmusementParkError.noFirstNameProvided
-//        }
-//        if firstName?.count == 0 {
-//            throw AmusementParkError.noFirstNameProvided
-//        }
-//
-//        guard lastName != nil else {
-//            throw AmusementParkError.noLastNameProvided
-//        }
-//        if lastName?.count == 0 {
-//            throw AmusementParkError.noLastNameProvided
-//        }
-//
-//        guard streetAddress != nil else {
-//            throw AmusementParkError.noStreetAddress
-//        }
-//        if streetAddress?.count == 0 {
-//            throw  AmusementParkError.noStreetAddress
-//        }
-//
-//        guard cityName != nil else {
-//            throw AmusementParkError.noCityName
-//        }
-//        if cityName?.count == 0 {
-//            throw  AmusementParkError.noCityName
-//        }
-//
-//        guard zipCode != nil else {
-//            throw AmusementParkError.noZipCode
-//        }
-//        if zipCode?.count == 0 {
-//            throw AmusementParkError.noZipCode
-//        }
-//
-//
-//    }
 }

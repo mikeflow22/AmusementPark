@@ -24,7 +24,8 @@ enum AmusementParkError: Error {
     case doNotHaveAccessToAllRides
     case notPermittedToSkipLines
     case notUnderTheFreeChildAgeLimit
-    
+    case noCompanyProvided
+    case noSSNProvided
     
     var localizedDescription: String {
         switch self {
@@ -56,6 +57,10 @@ enum AmusementParkError: Error {
             return "You can't skip lines bro"
         case .notUnderTheFreeChildAgeLimit:
             return "Error your child is not young enough"
+        case .noCompanyProvided:
+            return "Please provide the company you're working for"
+        case .noSSNProvided:
+            return "Please provide an SSN"
         }
     }
 }

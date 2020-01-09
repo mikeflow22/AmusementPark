@@ -9,25 +9,17 @@
 import Foundation
 
 class HourlyEmployeeRideServices: Entrant {
+    let SSN: String
+    let dateOfBirth: Date
     
-    init(employeeInformation: PersonalInformation) throws {
-        super.init(entrantType: .hourlyEmployee, passType: .hourlyEmplyoeeRideServices, rideAccess: [.allRides], areaAccess: [.amusement, .rideControl], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
+    init(employeeInformation: PersonalInformation, SSN: String?, dateOfBirth: Date?) throws {
+        guard let SSN = SSN, !SSN.isEmpty else { throw AmusementParkError.noSSNProvided }
+        guard let dateOfBirth = dateOfBirth else { throw AmusementParkError.noBirthdayProvided }
         
-        guard employeeInformation.firstName != nil else {
-            throw AmusementParkError.noFirstNameProvided
-        }
-        guard employeeInformation.lastName != nil else {
-            throw AmusementParkError.noLastNameProvided
-        }
-        guard employeeInformation.streetAddress != nil else {
-            throw AmusementParkError.noStreetAddress
-        }
-        guard employeeInformation.state != nil else {
-            throw AmusementParkError.noState
-        }
-        guard employeeInformation.zipCode != nil else {
-            throw AmusementParkError.noZipCode
-        }
+        self.SSN = SSN
+        self.dateOfBirth = dateOfBirth
+        
+        super.init(entrantType: .hourlyEmployee, passType: .hourlyEmplyoeeRideServices, rideAccess: [.allRides], areaAccess: [.amusement, .rideControl], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
     }
     
     override func swipe(rideAccess: RideAccess) -> Bool {
