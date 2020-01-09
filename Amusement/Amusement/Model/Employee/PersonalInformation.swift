@@ -62,6 +62,8 @@ struct PersonalInformation {
         self.state = state
         self.zipCode = zipCode
     }
+    
+    //[REVIEW] - Delete code you don't need anymore. There are a couple of files in your project that only have commented code in them. You should get rid of those too.
 //    func testCases() throws {
 //        guard firstName != nil else {
 //            throw AmusementParkError.noFirstNameProvided

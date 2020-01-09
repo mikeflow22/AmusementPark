@@ -13,6 +13,7 @@ class HourlyEmployeeMaintenance: Entrant {
     init(employeeInformation: PersonalInformation) throws {
         super.init(entrantType: .hourlyEmployee, passType: .hourlyEmployeeMaintenance, rideAccess: [.allRides], areaAccess: [.amusement, .kitchen, .rideControl, .maintenance], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
         
+        //[REVIEW] - As discussed during our call I would change those and all other initializers to the one you have PersonalInformation
         guard employeeInformation.firstName != nil else {
             throw AmusementParkError.noFirstNameProvided
         }

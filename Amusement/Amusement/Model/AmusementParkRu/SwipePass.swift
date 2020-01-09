@@ -10,5 +10,6 @@ import Foundation
 protocol SwipePass {
     func swipe(areaAccess: AreaAccess) -> Bool
     func swipe(rideAccess: RideAccess) -> Bool
+    //[REVIEW] - Instead of Float Double is preferred when working with decimal numbers
     func swipe(discount: DiscountType) -> Float
 }

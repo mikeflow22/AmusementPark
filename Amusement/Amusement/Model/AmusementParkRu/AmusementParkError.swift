@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//[REVIEW] - For future reference this could also conform to LocalizedError. You would then need to override `errorDescription` rather than `localizedDescription`. LocalizedError simplifies localization of your app since the system can figure out the language to use when displaying the error.
 enum AmusementParkError: Error {
     case noPersonalInformation
     case noBirthdayProvided

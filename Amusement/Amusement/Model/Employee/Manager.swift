@@ -8,6 +8,11 @@
 
 import Foundation
 
+//This is missing in your current implementation. If you expand the cell in the Business Rules Matrix you will see three tiers for the manager.
+enum ManagementTier {
+    case shiftManager, generalManager, seniorManager
+}
+
 class Manager: Entrant {
     init(employeeInformation: PersonalInformation) throws {
         super.init(entrantType: .manager, passType: .manager, rideAccess: [.allRides], areaAccess: [.amusement, .kitchen, .rideControl, .maintenance, .office], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
