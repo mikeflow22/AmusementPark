@@ -321,11 +321,13 @@ class HomePageTableViewController: UITableViewController {
             case .shiftManager: entrant = try Manager(employeeInformation: PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text), managerType: .shiftManager, SSN: SSNTextField.text, dateOfBirth: dateOfBirthTextField.text)
             }
         } catch {
-            print(error)
+            presentAlert(with: "Error", message: error.localizedDescription)
         }
         
         if let entrant = entrant {
-            print(entrant)
+            guard let passVC = storyboard?.instantiateViewController(withIdentifier: "PassViewController") as? PassViewController else { return }
+            passVC.entrant = entrant
+            present(passVC, animated: true)
         }
     }
     

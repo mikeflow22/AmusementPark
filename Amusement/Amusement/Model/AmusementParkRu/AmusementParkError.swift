@@ -9,7 +9,7 @@
 import Foundation
 
 //[REVIEW] - For future reference this could also conform to LocalizedError. You would then need to override `errorDescription` rather than `localizedDescription`. LocalizedError simplifies localization of your app since the system can figure out the language to use when displaying the error.
-enum AmusementParkError: Error {
+enum AmusementParkError: LocalizedError {
     case noPersonalInformation
     case noBirthdayProvided
     case noFirstNameProvided
@@ -27,7 +27,7 @@ enum AmusementParkError: Error {
     case noCompanyProvided
     case noSSNProvided
     
-    var localizedDescription: String {
+    var errorDescription: String? {
         switch self {
         case .noPersonalInformation:
             return "No personal information was entered. enter that shit bitch."

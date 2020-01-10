@@ -36,6 +36,8 @@
 		7891903423C790E400A8302A /* ContractEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891903323C790E400A8302A /* ContractEmployee.swift */; };
 		7891903623C7936A00A8302A /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7891903523C7936A00A8302A /* Vendor.swift */; };
 		78FB25D723C89D8900D22377 /* Date Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB25D623C89D8900D22377 /* Date Extensions.swift */; };
+		78FB25D923C89FA500D22377 /* PassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB25D823C89FA500D22377 /* PassViewController.swift */; };
+		78FB25DB23C8A03D00D22377 /* UIViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB25DA23C8A03D00D22377 /* UIViewController+UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		7891903323C790E400A8302A /* ContractEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractEmployee.swift; sourceTree = "<group>"; };
 		7891903523C7936A00A8302A /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
 		78FB25D623C89D8900D22377 /* Date Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date Extensions.swift"; sourceTree = "<group>"; };
+		78FB25D823C89FA500D22377 /* PassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassViewController.swift; sourceTree = "<group>"; };
+		78FB25DA23C8A03D00D22377 /* UIViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 				1B0FD433233C3C2E00E0A3A8 /* DiscountType.swift */,
 				1B708BAD234FCA78006EBEEF /* GuestType.swift */,
 				78FB25D623C89D8900D22377 /* Date Extensions.swift */,
+				78FB25DA23C8A03D00D22377 /* UIViewController+UIAlertController.swift */,
 			);
 			path = "Model Types";
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				1B3E9B1C2336F9A70057187F /* Resources */,
 				1B3E9B0E2336F9620057187F /* Main.storyboard */,
 				1B72CDD523C632E80073C1F1 /* HomePageTableViewController.swift */,
+				78FB25D823C89FA500D22377 /* PassViewController.swift */,
 			);
 			path = Amusement;
 			sourceTree = "<group>";
@@ -268,7 +274,9 @@
 				7891903623C7936A00A8302A /* Vendor.swift in Sources */,
 				1B3E9B31233708CA0057187F /* PersonalInformation.swift in Sources */,
 				1B3E9B1F2336FAAC0057187F /* Entrant.swift in Sources */,
+				78FB25DB23C8A03D00D22377 /* UIViewController+UIAlertController.swift in Sources */,
 				1B0FD430233C3A6600E0A3A8 /* EntrantType.swift in Sources */,
+				78FB25D923C89FA500D22377 /* PassViewController.swift in Sources */,
 				78FB25D723C89D8900D22377 /* Date Extensions.swift in Sources */,
 				1B72CDD823C642F70073C1F1 /* RandomData.swift in Sources */,
 				7891903223C78FF300A8302A /* SeniorGuest.swift in Sources */,
