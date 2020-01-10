@@ -8,7 +8,6 @@
 
 import Foundation
 
-//[REVIEW] - A bunch of stuff would have been easier when you had used protocol composition rather than class inheritance. No need to change things now, but something to remember for the future.
 class Entrant: SwipePass {
     var entrantType: EntrantType
     var passType: PassType
@@ -37,4 +36,8 @@ class Entrant: SwipePass {
     func swipe(discount: DiscountType) -> Float {
         return 0.0
     }
+}
+
+protocol BirthdayProvidable: Entrant {
+    var dateOfBirth: Date { get }
 }

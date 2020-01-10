@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContractEmployee: Entrant {
+class ContractEmployee: Entrant, BirthdayProvidable {
     enum ProjectNumber: Int {
         case oneThousandOne = 1001
         case oneThousandTwo = 1002
@@ -18,8 +18,10 @@ class ContractEmployee: Entrant {
     }
     
     let projectNumber: ProjectNumber
+    let SSN: String
+    let dateOfBirth: Date
 
-    init(personalInformation: PersonalInformation, projectNumber: ProjectNumber) {
+    init(personalInformation: PersonalInformation, projectNumber: ProjectNumber, SSN: String?, dateOfBirth: String?) throws {
         var areas = [AreaAccess]()
         switch projectNumber {
         case .oneThousandOne: areas = [.amusement, .rideControl]
@@ -30,6 +32,12 @@ class ContractEmployee: Entrant {
         }
         
         self.projectNumber = projectNumber
+        
+        guard let SSN = SSN, !SSN.isEmpty else { throw AmusementParkError.noSSNProvided }
+        guard let dateOfBirth = dateOfBirth, let birthday = Date.fromString(dateOfBirth) else { throw AmusementParkError.noBirthdayProvided }
+        
+        self.dateOfBirth = birthday
+        self.SSN = SSN
         
         super.init(entrantType: .hourlyEmployee, passType: .contractEmployee, rideAccess: [], areaAccess: areas, discountType: [], personInformation: personalInformation)
     }

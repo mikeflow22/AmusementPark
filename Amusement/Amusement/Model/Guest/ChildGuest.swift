@@ -17,12 +17,10 @@ class ChildGuest: Entrant {
         return dateComponents.year ?? 0
     }
     
-    init(dateOfBirth: Date?) throws {
-        guard let bornDay = dateOfBirth else {
-            throw AmusementParkError.noBirthdayProvided
-        }
+    init(dateOfBirth: String?) throws {
+        guard let dateOfBirth = dateOfBirth, let birthday = Date.fromString(dateOfBirth) else { throw AmusementParkError.noBirthdayProvided }
         
-        self.dateOfBirth = bornDay
+        self.dateOfBirth = birthday
         
         super.init(entrantType: .guest, passType: .freeChild, rideAccess: [.allRides], areaAccess: [.amusement], discountType: [])
         

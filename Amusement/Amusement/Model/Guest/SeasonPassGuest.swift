@@ -9,7 +9,13 @@
 import Foundation
 
 class SeasonPassGuest: Entrant {
-    init(personalInformation: PersonalInformation) {
+    let dateOfBirth: Date
+    
+    init(personalInformation: PersonalInformation, dateOfBirth: String?) throws {
+        guard let dateOfBirth = dateOfBirth, let birthday = Date.fromString(dateOfBirth) else { throw AmusementParkError.noBirthdayProvided }
+        
+        self.dateOfBirth = birthday
+        
         super.init(entrantType: .guest, passType: .seasonPass, rideAccess: [.allRides, .skipLinePass], areaAccess: [.amusement], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: personalInformation)
     }
 }

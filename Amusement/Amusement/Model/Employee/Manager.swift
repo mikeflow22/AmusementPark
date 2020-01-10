@@ -18,13 +18,13 @@ class Manager: Entrant {
     let SSN: String
     let dateOfBirth: Date
     
-    init(employeeInformation: PersonalInformation, managerType: ManagerType, SSN: String?, dateOfBirth: Date?) throws {
+    init(employeeInformation: PersonalInformation, managerType: ManagerType, SSN: String?, dateOfBirth: String?) throws {
         guard let SSN = SSN, !SSN.isEmpty else { throw AmusementParkError.noSSNProvided }
-        guard let dateOfBirth = dateOfBirth else { throw AmusementParkError.noBirthdayProvided }
+        guard let dateOfBirth = dateOfBirth, let birthday = Date.fromString(dateOfBirth) else { throw AmusementParkError.noBirthdayProvided }
         
         self.managerType = managerType
         self.SSN = SSN
-        self.dateOfBirth = dateOfBirth
+        self.dateOfBirth = birthday
         
         super.init(entrantType: .manager, passType: .manager, rideAccess: [.allRides], areaAccess: [.amusement, .kitchen, .rideControl, .maintenance, .office], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
     }

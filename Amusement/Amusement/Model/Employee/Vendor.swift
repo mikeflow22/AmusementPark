@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Vendor: Entrant {
+class Vendor: Entrant, BirthdayProvidable {
     enum VendorCompany: String {
         case acme = "Acme"
         case orkin = "Orkin"
@@ -22,16 +22,16 @@ class Vendor: Entrant {
     let dateOfBirth: Date
     let dateOfVisit: Date
     
-    init(firstName: String?, lastName: String?, company: VendorCompany?, dateOfBirth: Date?, dateOfVisit: Date = Date()) throws {
+    init(firstName: String?, lastName: String?, company: VendorCompany?, dateOfBirth: String?, dateOfVisit: Date = Date()) throws {
         guard let firstName = firstName, !firstName.isEmpty else { throw AmusementParkError.noFirstNameProvided }
         guard let lastName = lastName, !lastName.isEmpty else { throw AmusementParkError.noLastNameProvided }
         guard let company = company else { throw AmusementParkError.noCompanyProvided }
-        guard let dateOfBirth = dateOfBirth else { throw AmusementParkError.noBirthdayProvided }
+        guard let dateOfBirth = dateOfBirth, let birthday = Date.fromString(dateOfBirth) else { throw AmusementParkError.noBirthdayProvided }
         
         self.firstName = firstName
         self.lastName = lastName
         self.company = company
-        self.dateOfBirth = dateOfBirth
+        self.dateOfBirth = birthday
         self.dateOfVisit = dateOfVisit
         
         var areas = [AreaAccess]()

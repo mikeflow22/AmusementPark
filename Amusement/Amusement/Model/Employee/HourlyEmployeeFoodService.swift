@@ -8,16 +8,16 @@
 
 import Foundation
 
-class HourlyEmployeeFoodService: Entrant {
+class HourlyEmployeeFoodService: Entrant, BirthdayProvidable {
+    var dateOfBirth: Date
     let SSN: String
-    let dateOfBirth: Date
     
-    init(employeeInformation: PersonalInformation, SSN: String?, dateOfBirth: Date?) throws {
+    init(employeeInformation: PersonalInformation, SSN: String?, dateOfBirth: String?) throws {
         guard let SSN = SSN, !SSN.isEmpty else { throw AmusementParkError.noSSNProvided }
-        guard let dateOfBirth = dateOfBirth else { throw AmusementParkError.noBirthdayProvided }
+        guard let dateOfBirth = dateOfBirth, let birthday = Date.fromString(dateOfBirth) else { throw AmusementParkError.noBirthdayProvided }
         
+        self.dateOfBirth = birthday
         self.SSN = SSN
-        self.dateOfBirth = dateOfBirth
         
         super.init(entrantType: .hourlyEmployee, passType: .hourlyEmployeeFoodServices, rideAccess: [.allRides], areaAccess: [.amusement, .kitchen], discountType: [.foodDiscount, .merchandiseDiscount], personInformation: employeeInformation)
     }

@@ -33,28 +33,35 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="984" height="60.5"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D70-J7-oUd">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="60.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="190.5" height="60.5"/>
                                                                     <state key="normal" title="Guest"/>
                                                                     <connections>
                                                                         <action selector="guestButtonTapped:" destination="tHY-wT-Qcs" eventType="touchUpInside" id="e9l-g7-tGG"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sB9-Ip-3lF">
-                                                                    <rect key="frame" x="248" y="0.0" width="240" height="60.5"/>
+                                                                    <rect key="frame" x="198.5" y="0.0" width="190.5" height="60.5"/>
                                                                     <state key="normal" title="Employee"/>
                                                                     <connections>
                                                                         <action selector="employeeButtonTapped:" destination="tHY-wT-Qcs" eventType="touchUpInside" id="2A7-ys-mJu"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1V-Ge-Mrd">
-                                                                    <rect key="frame" x="496" y="0.0" width="240" height="60.5"/>
+                                                                    <rect key="frame" x="397" y="0.0" width="190" height="60.5"/>
                                                                     <state key="normal" title="Manager"/>
                                                                     <connections>
                                                                         <action selector="mangerButtonTapped:" destination="tHY-wT-Qcs" eventType="touchUpInside" id="hI1-T8-vM0"/>
                                                                     </connections>
                                                                 </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-DX-msG">
+                                                                    <rect key="frame" x="595" y="0.0" width="190.5" height="60.5"/>
+                                                                    <state key="normal" title="Contractor"/>
+                                                                    <connections>
+                                                                        <action selector="contractorButtonTapped:" destination="tHY-wT-Qcs" eventType="touchUpInside" id="kkR-j0-Ejq"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viH-Hn-y9C">
-                                                                    <rect key="frame" x="744" y="0.0" width="240" height="60.5"/>
+                                                                    <rect key="frame" x="793.5" y="0.0" width="190.5" height="60.5"/>
                                                                     <state key="normal" title="Vendor"/>
                                                                     <connections>
                                                                         <action selector="vendorButtonTapped:" destination="tHY-wT-Qcs" eventType="touchUpInside" id="LQQ-gM-5Wu"/>
@@ -430,6 +437,7 @@
                         <outlet property="childButton" destination="kZt-7C-fxm" id="YpL-ZB-Hpz"/>
                         <outlet property="cityTextField" destination="LO6-a7-Syc" id="yQk-Ax-NWg"/>
                         <outlet property="companyTextField" destination="mSW-HP-vkG" id="DNb-yG-8sX"/>
+                        <outlet property="contractorButton" destination="RgQ-DX-msG" id="BRF-QO-71g"/>
                         <outlet property="dateOfBirthTextField" destination="JW8-1t-PC6" id="nfD-2L-CcL"/>
                         <outlet property="firstNameTextField" destination="589-81-Dsv" id="f1j-RW-IPl"/>
                         <outlet property="lastNameTextField" destination="SNr-ei-cwA" id="yvl-5T-Ucx"/>
@@ -440,6 +448,16 @@
                         <outlet property="vendor2002Button" destination="foK-nW-IGf" id="DVI-bN-yEc"/>
                         <outlet property="vipButton" destination="6QY-lH-Bdr" id="7Ye-zX-kB7"/>
                         <outlet property="zipCodeTextField" destination="yip-PL-EDb" id="xh5-Kh-Ljs"/>
+                        <outletCollection property="textFields" destination="JW8-1t-PC6" collectionClass="NSMutableArray" id="s8s-Gy-fiQ"/>
+                        <outletCollection property="textFields" destination="CDG-iE-vFM" collectionClass="NSMutableArray" id="Gq0-xJ-iht"/>
+                        <outletCollection property="textFields" destination="2sr-Lz-AEb" collectionClass="NSMutableArray" id="Qdh-g9-v7y"/>
+                        <outletCollection property="textFields" destination="589-81-Dsv" collectionClass="NSMutableArray" id="7ZK-Qw-yer"/>
+                        <outletCollection property="textFields" destination="SNr-ei-cwA" collectionClass="NSMutableArray" id="wBI-a6-Ejf"/>
+                        <outletCollection property="textFields" destination="mSW-HP-vkG" collectionClass="NSMutableArray" id="kb1-2O-TTk"/>
+                        <outletCollection property="textFields" destination="C7F-YH-9dy" collectionClass="NSMutableArray" id="bAO-af-rfU"/>
+                        <outletCollection property="textFields" destination="LO6-a7-Syc" collectionClass="NSMutableArray" id="jtu-vp-nIs"/>
+                        <outletCollection property="textFields" destination="A0Z-xd-cYw" collectionClass="NSMutableArray" id="JOB-0V-Mar"/>
+                        <outletCollection property="textFields" destination="yip-PL-EDb" collectionClass="NSMutableArray" id="3sq-9d-VqQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="arz-yE-Fwe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

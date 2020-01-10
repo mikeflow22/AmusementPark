@@ -45,6 +45,9 @@ class HomePageTableViewController: UITableViewController {
     @IBOutlet weak var seniorButton: UIButton!
     @IBOutlet weak var vipButton: UIButton!
     @IBOutlet weak var vendor2002Button: UIButton!
+    @IBOutlet weak var contractorButton: UIButton!
+    @IBOutlet var textFields: [UITextField]!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,6 +83,13 @@ class HomePageTableViewController: UITableViewController {
             vipButton.setTitle("Contractor", for: UIControl.State())
             vendor2002Button.isHidden = true
         case .vendor:
+            childButton.setTitle("Acme", for: UIControl.State())
+            adultButton.setTitle("Orkin", for: UIControl.State())
+            seniorButton.setTitle("Fedex", for: UIControl.State())
+            vipButton.isHidden = false
+            vipButton.setTitle("NW Electrical", for: UIControl.State())
+            vendor2002Button.isHidden = true
+        case .contractor:
             childButton.setTitle("1001", for: UIControl.State())
             adultButton.setTitle("1002", for: UIControl.State())
             seniorButton.setTitle("1003", for: UIControl.State())
@@ -93,6 +103,7 @@ class HomePageTableViewController: UITableViewController {
     
     //If I remember correctly you need to enable/disable text fields depending on the user's selection, here's an example implementation of a function that handles this
     func updateTextFields(for entrantSubType: EntrantSubType) {
+        textFields.forEach { $0.text = "" }
         switch entrantSubType {
         case .adult:
             firstNameTextField.isEnabled = false
@@ -147,7 +158,7 @@ class HomePageTableViewController: UITableViewController {
         case .foodServiceEmployee, .maintenanceEmployee, .rideServiceEmployee:
             firstNameTextField.isEnabled = true
             lastNameTextField.isEnabled = true
-            dateOfBirthTextField.isEnabled = false
+            dateOfBirthTextField.isEnabled = true
             companyTextField.isEnabled = false
             zipCodeTextField.isEnabled = true
             stateTextField.isEnabled = true
@@ -157,8 +168,8 @@ class HomePageTableViewController: UITableViewController {
         case .contractor:
             firstNameTextField.isEnabled = true
             lastNameTextField.isEnabled = true
-            dateOfBirthTextField.isEnabled = false
-            companyTextField.isEnabled = true
+            dateOfBirthTextField.isEnabled = true
+            companyTextField.isEnabled = false
             zipCodeTextField.isEnabled = true
             stateTextField.isEnabled = true
             cityTextField.isEnabled = true
@@ -182,6 +193,7 @@ class HomePageTableViewController: UITableViewController {
             zipCodeTextField.isEnabled = false
             stateTextField.isEnabled = false
             cityTextField.isEnabled = false
+            streetAddressTextField.isEnabled = false
             projectNumberTextField.isEnabled = false
             SSNTextField.isEnabled = false
         }
@@ -215,6 +227,9 @@ class HomePageTableViewController: UITableViewController {
         case .manager: selectedEntrant = .shiftManager
         case .vendor:
             selectedEntrant = .vendor
+            companyTextField.text = "Acme"
+        case .contractor:
+            selectedEntrant = .contractor
             projectNumberTextField.text = "1001"
         default: break
         }
@@ -227,6 +242,9 @@ class HomePageTableViewController: UITableViewController {
         case .manager: selectedEntrant = .generalManager
         case .vendor:
             selectedEntrant = .vendor
+            companyTextField.text = "Orkin"
+            case .contractor:
+            selectedEntrant = .contractor
             projectNumberTextField.text = "1002"
         default: break
         }
@@ -239,6 +257,9 @@ class HomePageTableViewController: UITableViewController {
         case .manager: selectedEntrant = .seniorManager
         case .vendor:
             selectedEntrant = .vendor
+            companyTextField.text = "Fedex"
+            case .contractor:
+            selectedEntrant = .contractor
             projectNumberTextField.text = "1003"
         default: break
         }
@@ -250,6 +271,9 @@ class HomePageTableViewController: UITableViewController {
         case .hourlyEmployee: selectedEntrant = .contractor
         case .vendor:
             selectedEntrant = .vendor
+            companyTextField.text = "NW Electrical"
+            case .contractor:
+            selectedEntrant = .contractor
             projectNumberTextField.text = "2001"
         default: break
         }
@@ -258,52 +282,145 @@ class HomePageTableViewController: UITableViewController {
     @IBAction func vendor2002ButtonTapped(_ sender: UIButton) {
         switch selectedEntrantType {
         case .guest: selectedEntrant = .senior
-        case .vendor:
-            selectedEntrant = .vendor
+            case .contractor:
+            selectedEntrant = .contractor
             projectNumberTextField.text = "2002"
         default: break
         }
     }
     
+    @IBAction func contractorButtonTapped(_ sender: UIButton) {
+        selectedEntrantType = .contractor
+    }
+    
     @IBAction func generatePassButtonTapped(_ sender: UIButton) {
-        //Again you need to switch over the user's selection to create the correct entrant sub type with the data you get from the user
+        var entrant: Entrant?
         
-        //get data from user
-//        switch selectedEntrant {
-//        case .generalManager:
-//            do {
-//                let personalInfo = try PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text)
-//                let manager = try Manager(employeeInformation: personalInfo, managerType: .generalManager)
-//                print("Printing out manager's information: \(manager)")
-//            } catch  {
-//                print("Error in: \(#function)\n Readable Error: \(error.localizedDescription)\n Technical Error: \(error)")
-//            }
-//
-//        default: break
-//        }
+        do {
+            guard let selectedEntrant = selectedEntrant else { return }
+            
+            switch selectedEntrant {
+            case .adult: entrant = try ClassicGuest()
+            case .vip: entrant = try VIPGuest()
+            case .child: entrant = try ChildGuest(dateOfBirth: dateOfBirthTextField.text)
+            case .season: entrant = try SeasonPassGuest(personalInformation: PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text), dateOfBirth: dateOfBirthTextField.text)
+            case .senior: entrant = try SeniorGuest(firstName: firstNameTextField.text, lastName: lastNameTextField.text, dateOfBirth: dateOfBirthTextField.text)
+            case .contractor:
+                guard let projectNumberString = projectNumberTextField.text, let projectNumberInt = Int(projectNumberString), let projectNumber = ContractEmployee.ProjectNumber(rawValue: projectNumberInt) else { return }
+                
+                entrant = try ContractEmployee(personalInformation: PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text), projectNumber: projectNumber, SSN: SSNTextField.text, dateOfBirth: dateOfBirthTextField.text)
+            case .vendor:
+                guard let companyString = companyTextField.text, let company = Vendor.VendorCompany(rawValue: companyString) else { return }
+                
+                try entrant = Vendor(firstName: firstNameTextField.text, lastName: lastNameTextField.text, company: company, dateOfBirth: dateOfBirthTextField.text, dateOfVisit: Date())
+            case .foodServiceEmployee: entrant = try HourlyEmployeeFoodService(employeeInformation: PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text), SSN: SSNTextField.text, dateOfBirth: dateOfBirthTextField.text)
+            case .maintenanceEmployee: entrant = try HourlyEmployeeMaintenance(employeeInformation: PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text), SSN: SSNTextField.text, dateOfBirth: dateOfBirthTextField.text)
+            case .rideServiceEmployee: entrant = try HourlyEmployeeRideServices(employeeInformation: PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text), SSN: SSNTextField.text, dateOfBirth: dateOfBirthTextField.text)
+            case .seniorManager: entrant = try Manager(employeeInformation: PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text), managerType: .seniorManager, SSN: SSNTextField.text, dateOfBirth: dateOfBirthTextField.text)
+            case .generalManager: entrant = try Manager(employeeInformation: PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text), managerType: .generalManager, SSN: SSNTextField.text, dateOfBirth: dateOfBirthTextField.text)
+            case .shiftManager: entrant = try Manager(employeeInformation: PersonalInformation(firstName: firstNameTextField.text, lastName: lastNameTextField.text, streetAddress: streetAddressTextField.text, cityName: cityTextField.text, state: stateTextField.text, zipCode: zipCodeTextField.text), managerType: .shiftManager, SSN: SSNTextField.text, dateOfBirth: dateOfBirthTextField.text)
+            }
+        } catch {
+            print(error)
+        }
+        
+        if let entrant = entrant {
+            print(entrant)
+        }
     }
     
     @IBAction func populateDataButtonTapped(_ sender: UIButton) {
         switch selectedEntrant {
-        case .child: dateOfBirthTextField.text = RandomData.childGuest.dateOfBirth.description
-        case .foodServiceEmployee, .maintenanceEmployee, .rideServiceEmployee:
-            let employeeInfo = RandomData.foodServicesEmployee.personInformation
+        case .child: dateOfBirthTextField.text = RandomData.childGuest.dateOfBirth.readableDateString()
+        case .senior:
+            firstNameTextField.text = RandomData.seniorGuest.firstName
+            lastNameTextField.text = RandomData.seniorGuest.lastName
+            dateOfBirthTextField.text = RandomData.seniorGuest.dateOfBirth.readableDateString()
+        case .season:
+            let guestInfo = RandomData.seasonPassGuest.personInformation
+            firstNameTextField.text = guestInfo?.firstName
+            lastNameTextField.text = guestInfo?.lastName
+            streetAddressTextField.text = guestInfo?.streetAddress
+            stateTextField.text = guestInfo?.state
+            zipCodeTextField.text = guestInfo?.zipCode
+            dateOfBirthTextField.text = RandomData.seasonPassGuest.dateOfBirth.readableDateString()
+        case .contractor:
+            let employeeInfo = RandomData.contractor.personInformation
             firstNameTextField.text = employeeInfo?.firstName
             lastNameTextField.text = employeeInfo?.lastName
             streetAddressTextField.text = employeeInfo?.streetAddress
             zipCodeTextField.text = employeeInfo?.zipCode
             stateTextField.text = employeeInfo?.state
+            SSNTextField.text = RandomData.contractor.SSN
+            cityTextField.text = employeeInfo?.cityName
+            dateOfBirthTextField.text = RandomData.contractor.dateOfBirth.readableDateString()
+            projectNumberTextField.text = "\(RandomData.contractor.projectNumber.rawValue)"
+        case .vendor:
+            let employeeInfo = RandomData.vendor
+            firstNameTextField.text = employeeInfo.firstName
+            lastNameTextField.text = employeeInfo.lastName
+            companyTextField.text = RandomData.vendor.company.rawValue
+            dateOfBirthTextField.text = RandomData.vendor.dateOfBirth.readableDateString()
+        case .foodServiceEmployee:
+            let employeeInfo = RandomData.foodServicesEmployee.personInformation
+            firstNameTextField.text = employeeInfo?.firstName
+            lastNameTextField.text = employeeInfo?.lastName
+            streetAddressTextField.text = employeeInfo?.streetAddress
+            zipCodeTextField.text = employeeInfo?.zipCode
+            cityTextField.text = employeeInfo?.cityName
+            stateTextField.text = employeeInfo?.state
             SSNTextField.text = RandomData.foodServicesEmployee.SSN
-            dateOfBirthTextField.text = RandomData.foodServicesEmployee.dateOfBirth.description
-        case .shiftManager, .seniorManager, .generalManager:
-            let managerInfo = RandomData.manager.personInformation
+            dateOfBirthTextField.text = RandomData.foodServicesEmployee.dateOfBirth.readableDateString()
+        case .maintenanceEmployee:
+            let employeeInfo = RandomData.maintenanceEmployee.personInformation
+            firstNameTextField.text = employeeInfo?.firstName
+            lastNameTextField.text = employeeInfo?.lastName
+            streetAddressTextField.text = employeeInfo?.streetAddress
+            zipCodeTextField.text = employeeInfo?.zipCode
+            stateTextField.text = employeeInfo?.state
+            cityTextField.text = employeeInfo?.cityName
+            SSNTextField.text = RandomData.maintenanceEmployee.SSN
+            dateOfBirthTextField.text = RandomData.maintenanceEmployee.dateOfBirth.readableDateString()
+        case .rideServiceEmployee:
+            let employeeInfo = RandomData.rideServicesEmployee.personInformation
+            firstNameTextField.text = employeeInfo?.firstName
+            lastNameTextField.text = employeeInfo?.lastName
+            streetAddressTextField.text = employeeInfo?.streetAddress
+            zipCodeTextField.text = employeeInfo?.zipCode
+            stateTextField.text = employeeInfo?.state
+            cityTextField.text = employeeInfo?.cityName
+            SSNTextField.text = RandomData.rideServicesEmployee.SSN
+            dateOfBirthTextField.text = RandomData.rideServicesEmployee.dateOfBirth.readableDateString()
+        case .shiftManager:
+            let managerInfo = RandomData.manager(tier: .shiftManager).personInformation
             firstNameTextField.text = managerInfo?.firstName
             lastNameTextField.text = managerInfo?.lastName
             streetAddressTextField.text = managerInfo?.streetAddress
             zipCodeTextField.text = managerInfo?.zipCode
             stateTextField.text = managerInfo?.state
-            SSNTextField.text = RandomData.manager.SSN
-            dateOfBirthTextField.text = RandomData.manager.dateOfBirth.description
+            cityTextField.text = managerInfo?.cityName
+            SSNTextField.text = RandomData.manager(tier: .shiftManager).SSN
+            dateOfBirthTextField.text = RandomData.manager(tier: .shiftManager).dateOfBirth.readableDateString()
+        case .generalManager:
+            let managerInfo = RandomData.manager(tier: .generalManager).personInformation
+            firstNameTextField.text = managerInfo?.firstName
+            lastNameTextField.text = managerInfo?.lastName
+            streetAddressTextField.text = managerInfo?.streetAddress
+            zipCodeTextField.text = managerInfo?.zipCode
+            stateTextField.text = managerInfo?.state
+            cityTextField.text = managerInfo?.cityName
+            SSNTextField.text = RandomData.manager(tier: .generalManager).SSN
+            dateOfBirthTextField.text = RandomData.manager(tier: .generalManager).dateOfBirth.readableDateString()
+        case .seniorManager:
+            let managerInfo = RandomData.manager(tier: .seniorManager).personInformation
+            firstNameTextField.text = managerInfo?.firstName
+            lastNameTextField.text = managerInfo?.lastName
+            streetAddressTextField.text = managerInfo?.streetAddress
+            zipCodeTextField.text = managerInfo?.zipCode
+            cityTextField.text = managerInfo?.cityName
+            stateTextField.text = managerInfo?.state
+            SSNTextField.text = RandomData.manager(tier: .seniorManager).SSN
+            dateOfBirthTextField.text = RandomData.manager(tier: .seniorManager).dateOfBirth.readableDateString()
         default: break
         }
     }

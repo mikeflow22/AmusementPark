@@ -12,4 +12,5 @@ enum EntrantType: String {
     case hourlyEmployee = "HourlyEmployee"
     case manager = "Manager"
     case vendor = "Vendor"
+    case contractor = "Contractor"
 }
